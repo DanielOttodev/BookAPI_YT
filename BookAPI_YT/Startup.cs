@@ -30,7 +30,9 @@ namespace BookAPI_YT
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IBookRepositories, BookRepositories>();
-            services.AddDbContext<BookContext>(o => o.UseSqlServer("Server=tcp:track-server.database.windows.net,1433;Initial Catalog=trackdb;Persist Security Info=False;User ID=danboy123;Password=1Boost23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
+            services.AddScoped<IAmlAlertsRepository, AmlAlertsRepository>();
+            services.AddDbContext<BookContext>(o => o.UseSqlServer("Data Source=ha-prd-rdb01;Initial Catalog=UDAReporting2104EOM;Integrated Security=True"));
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

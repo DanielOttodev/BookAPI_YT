@@ -14,5 +14,7 @@ namespace BookAPI_YT.Models
             Database.EnsureCreated();
         }
         public DbSet<Book> Books { get; set; }
+
+        public DbSet<AmlAlerts> AmlAlerts { get; set; }
     }
 }
