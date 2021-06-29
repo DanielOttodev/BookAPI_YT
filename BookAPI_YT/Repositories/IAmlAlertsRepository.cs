@@ -7,6 +7,6 @@ namespace BookAPI_YT.Repositories
 {
     public interface IAmlAlertsRepository
     {
-        Task<AmlAlerts> GetAlerts(String client);
+        Task<AmlAlerts> GetAlerts(int client);
     }
 }

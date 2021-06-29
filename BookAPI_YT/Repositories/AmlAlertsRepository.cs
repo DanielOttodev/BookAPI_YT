@@ -15,7 +15,7 @@ namespace BookAPI_YT.Repositories
         {
             _context = context;
         }
-        public async Task<AmlAlerts> GetAlerts(String client)
+        public async Task<AmlAlerts> GetAlerts(int client)
         {
             
             return await _context.AmlAlerts.FindAsync(client);

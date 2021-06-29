@@ -20,7 +20,7 @@ namespace BookAPI_YT.Controllers
         }
 
         [HttpGet("{Client}")]
-        public async Task<ActionResult<AmlAlerts>> GetAlerts(string client)
+        public async Task<ActionResult<AmlAlerts>> GetAlerts(int client)
         {
 
             return await _amlAlertsRepository.GetAlerts(client);
