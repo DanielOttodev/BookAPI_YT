@@ -15,10 +15,10 @@ namespace BookAPI_YT.Repositories
         {
             _context = context;
         }
-        public async Task<AmlAlerts> GetAlerts(int client)
+        public async Task<AmlAlerts> GetAlerts(int id)
         {
             
-            return await _context.AmlAlerts.FindAsync(client);
+            return await _context.AmlAlerts.FindAsync(id);
 
         }
     }

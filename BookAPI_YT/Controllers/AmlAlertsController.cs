@@ -19,11 +19,11 @@ namespace BookAPI_YT.Controllers
             _amlAlertsRepository = amlAlertsRepository;
         }
 
-        [HttpGet("{Client}")]
-        public async Task<ActionResult<AmlAlerts>> GetAlerts(int client)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<AmlAlerts>> GetAlerts(int id)
         {
 
-            return await _amlAlertsRepository.GetAlerts(client);
+            return await _amlAlertsRepository.GetAlerts(id);
         }
     }
 }
