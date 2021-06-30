@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,13 +8,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BookAPI_YT.Models
 {
-    [Table("Applic")]
+   
+    [Table("Client")]
 
     public class AmlAlerts
     {
-     
-        public string Id { get; set; }
-        public string ClientId { get; set; }
+     [Key]
+        public int Client { get; set; }
+        public string Occupation { get; set; }
         /*
         public string RuleNumber { get; set; }
         public DateTime DateStart { get; set; }

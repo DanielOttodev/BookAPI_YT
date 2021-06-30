@@ -31,7 +31,12 @@ namespace BookAPI_YT
         {
             services.AddScoped<IBookRepositories, BookRepositories>();
             services.AddScoped<IAmlAlertsRepository, AmlAlertsRepository>();
-            services.AddDbContext<BookContext>(o => o.UseSqlServer("Data Source=ha-prd-rdb01;Initial Catalog=UDAReporting2104EOM;Integrated Security=True"));
+            services.AddDbContext<BookContext>(o => o.UseSqlServer(
+                "Server=tcp:track-server.database.windows.net,1433;" +
+                "Initial Catalog=trackdb;Persist Security Info=False;" +
+                "User ID=danboy123;" +
+                "Password=1Boost23;" +
+                "MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
