@@ -7,7 +7,7 @@ namespace BookAPI_YT.Repositories
 {
     public interface IBookRepositories
     {
-        Task<IEnumerable<Book>> Get();
+        Task<IEnumerable<Book>> GetB();
 
         Task<Book> Get(int id);
 

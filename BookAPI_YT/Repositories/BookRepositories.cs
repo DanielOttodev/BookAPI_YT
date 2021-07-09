@@ -18,9 +18,11 @@ namespace BookAPI_YT.Repositories
         }
         public async Task<Book> Create(Book book)
         {
+
+            var lastBook = await _context.Books.OrderByDescending(x => x.Id).FirstOrDefaultAsync(); // Get the last book by Id
+            book.Id = lastBook.Id + 1;
             _context.Books.Add(book);
             await _context.SaveChangesAsync();
-            
             return book;
         }
 
@@ -30,7 +32,7 @@ namespace BookAPI_YT.Repositories
             _context.Books.Remove(bookToDelete);
         }
 
-        public async Task<IEnumerable<Book>> Get()
+        public async Task<IEnumerable<Book>> GetB()
         {
             return await _context.Books.ToListAsync();
         }

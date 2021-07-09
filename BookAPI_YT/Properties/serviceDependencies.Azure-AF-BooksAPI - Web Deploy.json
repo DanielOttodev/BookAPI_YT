@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "apis1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/AzureAPIMS/apis/azure-af-booksapi",
+      "type": "apis.azure"
+    },
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/track-server/databases/trackdb",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:trackdb",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}
