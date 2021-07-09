@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BookAPI_YT.Controllers
 {
-    [Route("api/[controller]")]
+    //[Route("/api/[controller]")]
     [ApiController]
     public class BooksController : ControllerBase
         
@@ -20,25 +20,29 @@ namespace BookAPI_YT.Controllers
         {
             _bookRepositories = bookRepositories;
         }
-        [HttpGet]
+        [HttpGet("/api/books")]
+  
         public async Task<IEnumerable<Book>> GetBooks()
         {
-            return await _bookRepositories.Get();
+            return await _bookRepositories.GetB();
         }
-        [HttpGet("{id}")]
+        [HttpGet("/api/books/{id}")]
+     
         public async Task<ActionResult<Book>> GetBooks(int id)
         {
             return await _bookRepositories.Get(id);
         }
 
 
-        [HttpPost]
+        [HttpPost("/api/books")]
+   
         public async Task<ActionResult<Book>>PostBooks([FromBody] Book book)
         {
             var newBook = await _bookRepositories.Create(book);
             return CreatedAtAction(nameof(GetBooks), new { id = newBook.Id }, newBook);
         }
-        [HttpPut]
+        [HttpPut("/api/books/{id}")]
+ 
         public async Task<ActionResult> PutBooks( int id , [FromBody] Book book)
         {
             if (id != book.Id)
